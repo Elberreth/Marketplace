@@ -23,19 +23,19 @@ import java.util.List;
 public class Advertisement {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY);
-    int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     String description;
-    int price;
-    LocalDateTime expirationDate;
+    private int price;
+    private LocalDateTime expirationDate;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn (name = "Creator_id")
-    User creator;
-    @OneToMany
-    List<User> interestedUsers = new ArrayList<>();
-    Category category;
-    AdType adType;
+    private User creator;
+    @ManyToMany
+    private List<User> interestedUsers = new ArrayList<>();
+    private Category category;
+    private AdType adType;
 
     public Advertisement(String description, int price, LocalDateTime expirationDate, User creator, Category category, AdType adType) {
         this.description = description;

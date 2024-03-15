@@ -3,7 +3,7 @@ package se.lexicon.advertisement_creation_api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import se.lexicon.entity.User;
+import se.lexicon.advertisement_creation_api.entity.User;
 
 
     public interface UserRepository extends JpaRepository<User, String> {
